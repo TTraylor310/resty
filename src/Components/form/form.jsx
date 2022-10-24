@@ -1,4 +1,4 @@
-
+import './form.scss';
 
 const Form = ({fakeAPI}) => {
 
