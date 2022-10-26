@@ -10,7 +10,7 @@ const Form = ({fakeAPI}) => {
     };
     fakeAPI(formData);
   }
-  
+
   return (
     <>
       <form onSubmit={handleSubmit}>
