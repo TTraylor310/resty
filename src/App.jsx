@@ -10,12 +10,9 @@ import './App.scss';
 
 const App = () => {
 
-  const [dataState, setDataState] = useState(
-    {
-      data: null,
-      requestParams: {},
-    }
-  )
+  const [data, setData] = useState(null);
+  const [requestParams, setRequestParams] = useState({});
+  
 
   const callApi = (requestParams) => {
     const newData = {
@@ -25,16 +22,23 @@ const App = () => {
         {name: 'fake thing 2', url: 'http://fakethings.com/2'},
       ],
     };
-    setDataState(newData, requestParams);
+    setData(newData);
+    setRequestParams(requestParams);
   }
+
+  // const updateThings = infos => {
+  //   console.log(infos);
+  // }
+
+
 
   return (
       <div className="App">
         <Header />
-        {/* <div>Request Method: {dataState.requestParams.method}</div> */}
-        {/* <div>URL: {dataState.requestParams.url}</div> */}
+        <div>Request Method: {requestParams.method}</div>
+        <div>URL: {requestParams.url}</div>
         <Form fakeAPI={callApi} />
-        <Results fakeData={dataState.data}/>
+        <Results fakeData={data}/>
         <Footer />
       </div>
   )
