@@ -1,9 +1,10 @@
-const Results = ({fakeData}) => {
+const Results = ({resultData}) => {
 
   return (
     <section>
       <pre>
-        {fakeData ? JSON.stringify(fakeData, undefined, 2) : null}
+        {/* {resultData ? JSON.stringify(resultData, undefined, 2) : null} */}
+        {resultData ? resultData.map((pokemon, index) => (<li key={`poke-${index}`}>{pokemon.name}</li>)) : null}
       </pre>
     </section>
   )

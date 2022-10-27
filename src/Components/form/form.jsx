@@ -1,19 +1,18 @@
 import { useState } from 'react'
+import Input from './input/input';
 import './form.scss';
 
 const Form = ({ fakeAPI }) => {
 
-  // const [text, setText] = useState('');
   const [url, setURL] = useState('');
   const [method, setMethod] = useState('');
-
 
   let handleSubmit = e => {
     e.preventDefault();
     fakeAPI({method,url})
   }
 
-  const swapiURL = 'https://swapi.dev/api/people'
+  // const swapiURL = 'https://swapi.dev/api/people'
   const pokeURL = 'https://pokeapi.co/api/v2/pokemon'
 
   return (
@@ -30,6 +29,9 @@ const Form = ({ fakeAPI }) => {
           />
           <button type="submit">GO!</button>
         </label>
+      </form>
+      <Input />
+      <form>
         <label className="methods">
           <span id="get" onClick={(e) => setMethod('GET')}>GET</span>
           <span id="post">POST</span>
@@ -37,8 +39,9 @@ const Form = ({ fakeAPI }) => {
           <span id="delete">DELETE</span>
         </label>
         <label className='api-lists'>
-          <span id='swapi' onClick={(e) => setURL(swapiURL)}>Star Wars API</span>
-          <span id='pokeapi' onClick={(e) => setURL(pokeURL)}>Star Wars API</span>
+          {/* <span id='swapi' onClick={(e) => setURL(swapiURL)}>Star Wars API</span> */}
+          Click 'Pokemon API' and hit 'GO!'
+          <span id='pokeapi' onClick={(e) => setURL(pokeURL)}>Pokemon API</span>
         </label>
       </form>
     </>
