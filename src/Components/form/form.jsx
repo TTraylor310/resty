@@ -1,30 +1,19 @@
 import { useState } from 'react'
+import Input from './input/input';
 import './form.scss';
 
 const Form = ({ fakeAPI }) => {
 
-  // const [text, setText] = useState('');
   const [url, setURL] = useState('');
   const [method, setMethod] = useState('');
 
-  // const temp = {
-  //   method: 
-  // }
-  // const handleTextChange = e => {
-  //   setText(e.target.value);
-  // }
-
   let handleSubmit = e => {
     e.preventDefault();
-    // const formData = {
-    //   method: 'GET',
-    //   url: 'https://pokeqpi.co/api/v2/pokemon',
-    // };
-
-    // setMethod(formData.method);
-    // setURL(formData.url);
     fakeAPI({method,url})
   }
+
+  // const swapiURL = 'https://swapi.dev/api/people'
+  const pokeURL = 'https://pokeapi.co/api/v2/pokemon'
 
   return (
     <>
@@ -36,15 +25,23 @@ const Form = ({ fakeAPI }) => {
           type='text' 
           placeholder='Please enter URL of API' 
           onChange={(e) => setURL(e.target.value)}
-          // value = {text}
+          value = {url}
           />
           <button type="submit">GO!</button>
         </label>
+      </form>
+      <Input />
+      <form>
         <label className="methods">
           <span id="get" onClick={(e) => setMethod('GET')}>GET</span>
           <span id="post">POST</span>
           <span id="put">PUT</span>
           <span id="delete">DELETE</span>
+        </label>
+        <label className='api-lists'>
+          {/* <span id='swapi' onClick={(e) => setURL(swapiURL)}>Star Wars API</span> */}
+          Click 'Pokemon API' and hit 'GO!'
+          <span id='pokeapi' onClick={(e) => setURL(pokeURL)}>Pokemon API</span>
         </label>
       </form>
     </>
