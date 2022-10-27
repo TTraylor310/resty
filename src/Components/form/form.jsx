@@ -7,24 +7,14 @@ const Form = ({ fakeAPI }) => {
   const [url, setURL] = useState('');
   const [method, setMethod] = useState('');
 
-  // const temp = {
-  //   method: 
-  // }
-  // const handleTextChange = e => {
-  //   setText(e.target.value);
-  // }
 
   let handleSubmit = e => {
     e.preventDefault();
-    // const formData = {
-    //   method: 'GET',
-    //   url: 'https://pokeqpi.co/api/v2/pokemon',
-    // };
-
-    // setMethod(formData.method);
-    // setURL(formData.url);
     fakeAPI({method,url})
   }
+
+  const swapiURL = 'https://swapi.dev/api/people'
+  const pokeURL = 'https://pokeapi.co/api/v2/pokemon'
 
   return (
     <>
@@ -36,7 +26,7 @@ const Form = ({ fakeAPI }) => {
           type='text' 
           placeholder='Please enter URL of API' 
           onChange={(e) => setURL(e.target.value)}
-          // value = {text}
+          value = {url}
           />
           <button type="submit">GO!</button>
         </label>
@@ -45,6 +35,10 @@ const Form = ({ fakeAPI }) => {
           <span id="post">POST</span>
           <span id="put">PUT</span>
           <span id="delete">DELETE</span>
+        </label>
+        <label className='api-lists'>
+          <span id='swapi' onClick={(e) => setURL(swapiURL)}>Star Wars API</span>
+          <span id='pokeapi' onClick={(e) => setURL(pokeURL)}>Star Wars API</span>
         </label>
       </form>
     </>

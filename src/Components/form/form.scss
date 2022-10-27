@@ -22,5 +22,18 @@ form {
         }
       }
     }
+
+    &.api-lists {
+      span {
+        cursor: pointer;
+        margin-right: 1rem;
+        padding: .25rem .5rem;
+        background: rgb(237, 58, 58);
+
+        &:hover, &.active {
+          background: rgb(207, 108, 108);
+        }
+      }
+    }
   }
 }

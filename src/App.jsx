@@ -22,14 +22,14 @@ const App = () => {
         {name: 'fake thing 2', url: 'http://fakethings.com/2'},
       ],
     };
+
+    // const newerData = () => {
+    // 
+    // }
+
     setData(newData);
     setRequestParams(requestParams);
   }
-
-  // const updateThings = infos => {
-  //   console.log(infos);
-  // }
-
 
 
   return (
@@ -44,6 +44,5 @@ const App = () => {
   )
 
 }
-
 
 export default App;
