@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Input from './input/input';
+import InputForm from './input/input';
 import './form.scss';
 
 const Form = ({ fakeAPI }) => {
@@ -30,7 +30,7 @@ const Form = ({ fakeAPI }) => {
           <button type="submit">GO!</button>
         </label>
       </form>
-      <Input />
+      <InputForm />
       <form>
         <label className="methods">
           <span id="get" onClick={(e) => setMethod('GET')}>GET</span>

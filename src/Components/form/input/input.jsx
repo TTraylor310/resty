@@ -1,7 +1,7 @@
 import {useState} from 'react';
 
 
-const Jinput = () => {
+const InputForm = () => {
 
   const [text, setText] = useState('');
 
@@ -16,9 +16,12 @@ const Jinput = () => {
         onChange = {(e) => setText(e.target.value)}
         value = {text}
         />
+        <textarea>
+
+        </textarea>
       </form>
     </div>
   )
 }
 
-export default Jinput;
+export default InputForm;
